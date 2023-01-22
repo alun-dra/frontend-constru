@@ -1,0 +1,15 @@
+
+/*abstracts*/
+@use '../sass/abstracts/variables';
+@use '../sass/abstracts/mixins';
+
+
+/*base*/
+@use '../sass/base/base';
+@use '../sass/base/resets';
+
+/*page*/
+@use '../sass/page/loginPage.scss';
+
+/*components*/
+@use '../sass/components/loginComponent.scss';

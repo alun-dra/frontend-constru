@@ -1,0 +1,133 @@
+@use '../base/resets';
+
+/*styles*/
+.container{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: var(--color-blackClaro);
+    border-radius: 8px;
+    overflow: hidden;
+    .container-form{
+        position: absolute;
+        inset: 2px;
+        border-radius: 8px;
+        background: var(--color-blackClaro);
+        z-index: 10;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;   
+        .title-form{
+            color: var(--color-whiteClaro);
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.1rem;
+        }
+        .inputbox{
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+            .input{
+                position: relative;
+                width: 100%;
+                padding: 20px 10px 10px;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: var(--color-blackClaro);
+                font-size: 1em;
+                letter-spacing: 0.05rem;
+                z-index: 10;
+            }
+            .span{
+                position: absolute;
+                left: 0;
+                padding: 20px 0px 10px;
+                font-size: 1em;
+                color: #8f8f8f;
+                pointer-events: none;
+                letter-spacing: 0.05rem;
+                transition: 0.5s;
+            }
+            .li{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background: var(--color-whiteClaro);
+                border-radius: 4px;
+                transition: 0.5s;
+                pointer-events: none;
+                z-index: 9;
+            }
+        }
+        .container-button
+        {
+            .button{
+                border: none;
+                outline: none;
+                background: var(--color-whiteClaro);
+                padding: 11px 25px;
+                margin-top: 20px;
+                border-radius: 4px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+.container::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent,
+    var(--color-whiteClaro), var(--color-whiteClaro));
+    transform-origin: bottom right ;
+    animation: animate 6s linear infinite;
+}
+.container::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent,
+    var(--color-whiteClaro), var(--color-whiteClaro));
+    transform-origin: bottom right ;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.inputbox .input:valid ~ .span,
+.inputbox .input:focus ~ .span
+{
+    color: var(--color-whiteClaro);
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputbox .input:valid ~ .li,
+.inputbox .input:focus ~ .li
+{
+    height: 40px;
+}
+
+/*animation*/
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+
+}
