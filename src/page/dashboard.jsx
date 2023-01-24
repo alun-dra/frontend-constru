@@ -1,16 +1,19 @@
 import React from 'react'
-import Nav from '../components/nav/nav'
+
+import Sidebar from '../components/sidebar/sidebarComponent'
 
 
 function Dashboard() {
   return (
     <>
+      <header>
+        aqui va el logo
+      </header>    
+      <main>
         <div>
-            <Nav />
+          <Sidebar />
         </div>
-        <div>
-            contenido
-        </div>
+      </main>
     
     </>
   )
